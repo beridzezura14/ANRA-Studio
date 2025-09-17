@@ -1,173 +1,171 @@
 @use "../main.scss";
 
 .main-header {
-    position: fixed;
-    width: 100%;
-    background-color: white !important;
-    padding: 1.5rem 0;
-    z-index: 111;
-    .header {
-        max-width: 90%;
-        margin: auto;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+  position: fixed;
+  width: 100%;
+  // background-color: white !important;
+  padding: 1.5rem 0;
+  z-index: 111;
+  .header {
+    max-width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-        .logo{
-            font-family: "Hubot Sans", sans-serif;  
-            text-transform: uppercase;
-            font-size: 24px;  
-            // color: #2B384C;
-            font-weight: 500;
-        }
+    .logo {
+      font-family: "Hubot Sans", sans-serif;
+      text-transform: uppercase;
+      font-size: 24px;
+      color: #dfd0b8;
 
-        .navbar{
-            position: absolute;
-            height: 50dvh;
-            background: linear-gradient(40deg, #2B384C 0%, #2B384C 40%, #643434 100%);
-            width: 90%;
-            top: 50dvh;
-            border-top-left-radius: 20px;
-            border-top-right-radius: 20px;
-            box-shadow: #2B384C 0px 0px 70px 4px;
-            transform: translateY(120%);
-            transition: 0.3s;
-            &.active {
-                
-                transform: translateY(0%);
-            }
-
-            ul{
-                padding: 20px;
-                position: relative;
-                height: 100%;
-                li{
-                    color: #ffffff;
-                    font-size: 22px;
-                    text-align: center;
-                    margin-top: 1.5rem;
-                    font-weight: 300;
-                    text-transform: uppercase;
-                    font-family: 'pantonmtav3';
-                }
-                .menu__contact{
-                    position: absolute;
-                    bottom: 1.5rem;
-                    left: 5%;
-                    width: 90%;
-                    border: 1px solid;
-                    border-radius: 20px;
-                    padding: 7px;
-                }
-            }    
-        }
-
-        .burger{
-            display: grid;
-            gap: 6px;
-            padding: 10px 0 10px 2px;
-            .line{
-                width: 35px;
-                height: 2px;
-                border-radius: 8px;
-                background-color: #2B384C;
-                transition: 0.5s;
-            }
-
-            .line-2{
-                width: 27px;
-            }
-
-            .line-1.active{
-                transform: translateY(7.5px) rotate(45deg);
-                transition: 0.5s;
-            }
-            .line-2.active{
-                opacity: 0;
-                transition: 0.5s;
-            }
-            .line-3.active{
-                transform: translateY(-9px) rotate(-45deg);
-                transition: 0.5s;
-            }
-            
-        }
-
-        .pc {
-            display: none;
-        }
+      font-weight: 500;
     }
+
+    .navbar {
+      position: absolute;
+      height: 50dvh;
+      background: linear-gradient(40deg, #2b384c 0%, #2b384c 40%, #643434 100%);
+      width: 90%;
+      top: 50dvh;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+      box-shadow: #2b384c 0px 0px 70px 4px;
+      transform: translateY(120%);
+      transition: 0.3s;
+      &.active {
+        transform: translateY(0%);
+      }
+
+      ul {
+        padding: 20px;
+        position: relative;
+        height: 100%;
+        li {
+          color: #dfd0b8;
+          font-size: 22px;
+          text-align: center;
+          margin-top: 1.5rem;
+          font-weight: 300;
+          text-transform: uppercase;
+          font-family: "pantonmtav3";
+        }
+        .menu__contact {
+          position: absolute;
+          bottom: 1.5rem;
+          left: 5%;
+          width: 90%;
+          border: 1px solid;
+          border-radius: 20px;
+          padding: 7px;
+        }
+      }
+    }
+
+    .burger {
+      display: grid;
+      gap: 6px;
+      padding: 10px 0 10px 2px;
+      cursor: pointer;
+      .line {
+        width: 35px;
+        height: 2px;
+        border-radius: 8px;
+        background-color: #DFD0B8;
+        transition: 0.5s;
+      }
+
+      .line-2 {
+        width: 27px;
+      }
+
+      .line-1.active {
+        transform: translateY(7.5px) rotate(45deg);
+        transition: 0.5s;
+      }
+      .line-2.active {
+        opacity: 0;
+        transition: 0.5s;
+      }
+      .line-3.active {
+        transform: translateY(-9px) rotate(-45deg);
+        transition: 0.5s;
+      }
+    }
+
+    .pc {
+      display: none;
+    }
+  }
 }
 
 @media (min-width: 1024px) {
-    .main-header {
-        padding: 1rem 0;
-        .header {
-            .navbar{
-                position: static !important;
-                height: 0;
-                width: 460px;
-                background: none;
-                border-top-left-radius: 0px;
-                border-top-right-radius: 0px;
-                // z-index: 1;
-                box-shadow: none;
-                transform: translateY(0);
-                transition: 0.3s;
-                &.active {
-                    transform: translateY(00);
-                }
-
-                ul{
-                    border: 1px solid #2B384C;
-                    padding: 0px;
-                    position: static;
-                    height: auto;
-                    display: flex;
-                    justify-content: center;
-                    gap: 1.2rem;
-                    margin-top: -21px;
-                    border-radius: 22px;
-                    padding: 7px 0px;
-
-                    li{
-                        color: #2B384C;
-                        font-size: 17px;
-                        margin-top: 0rem;
-                        font-weight: 500;
-                        text-transform: uppercase;
-                        cursor: pointer;
-                        transition: 0.5s;
-                    }
-
-                    li:hover{
-                        color: #643434;
-                        transition: 0.5s;
-
-                    }
-                    .menu__contact{
-                        display: none;
-                    }
-                } 
-            }
-
-            .burger{
-                display: none;            
-            }
-
-            .pc {
-                position: relative;
-                display: block;
-                font-family: 'pantonmtav3';
-                font-weight: 500;
-                border: 1px solid #2B384C;
-                padding: 10px 50px;
-                border-radius: 22px;
-                color: #fff;
-                background-color: #2B384C;
-                transition: 0.5s;
-                z-index: 1111;
-            }
+  .main-header {
+    padding: 1rem 0;
+    .header {
+      .navbar {
+        position: static !important;
+        height: 0;
+        width: 460px;
+        background: none;
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+        // z-index: 1;
+        box-shadow: none;
+        transform: translateY(0);
+        transition: 0.3s;
+        &.active {
+          transform: translateY(00);
         }
+
+        ul {
+          border: 1px solid #2b384c;
+          padding: 0px;
+          position: static;
+          height: auto;
+          display: flex;
+          justify-content: center;
+          gap: 1.2rem;
+          margin-top: -21px;
+          border-radius: 22px;
+          padding: 7px 0px;
+
+          li {
+            color: #dfd0b8;
+            font-size: 17px;
+            margin-top: 0rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: 0.5s;
+          }
+
+          li:hover {
+            color: #fff;
+            transition: 0.5s;
+          }
+          .menu__contact {
+            display: none;
+          }
+        }
+      }
+
+      .burger {
+        display: none;
+      }
+
+      .pc {
+        position: relative;
+        display: block;
+        font-family: "pantonmtav3";
+        font-weight: 500;
+        padding: 10px 50px;
+        border-radius: 22px;
+        color: #222831;
+        background-color: #DFD0B8;
+        transition: 0.5s;
+        z-index: 1111;
+      }
     }
+  }
 }

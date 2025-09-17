@@ -4,6 +4,8 @@ import axios from "axios";
 export default function AdminLogin({ onSuccess }) {
   const [password, setPassword] = useState("");
 
+
+  // http://localhost:5000  -   anra-academy-ii.onrender.com
   const handleLogin = async () => {
     try {
       await axios.post("https://anra-academy-ii.onrender.com/api/admin/check", { password });
@@ -22,7 +24,7 @@ export default function AdminLogin({ onSuccess }) {
         placeholder="Admin password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
-        className="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+        className="border text-[#222831] border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
       />
       <button
         onClick={handleLogin}

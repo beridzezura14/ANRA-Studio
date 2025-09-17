@@ -17,8 +17,8 @@ const Hero = () => {
   return (
     <section className="max-w-[90%] mx-auto py-24 text-center">
       <div className="flex-1">
-        <h1 className="text-3xl mb-4 font-pantonmtav3">{hero.title}</h1>
-        <p className="text-lg text-gray-600">{hero.subtitle}</p>
+        <h1 className="text-4xl mb-4 font-pantonmtav3">{hero.title}</h1>
+        <p className="text-lg">{hero.subtitle}</p>
       </div>
       <img
         className="hero_image w-[35%] m-auto py-6"

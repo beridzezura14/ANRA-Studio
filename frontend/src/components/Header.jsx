@@ -6,22 +6,27 @@ import { Link } from 'react-router-dom';
 
 function Header() {
     const [active, setActive] = useState(false);
+
+    const handleLinkClick = () => {
+        setActive(false); // მენიუს დახურვა
+    }
+    
     return (
         <div className='main-header'>
             <div className="header">
-                <div className="logo text-transparent bg-clip-text bg-gradient-to-r from-[#2B384C] to-[#643434]">
+                <div className="logo text-transparent bg-clip-text">
                     ANRA Studio
                 </div>
 
                 <div className={`navbar ${active ? 'active' : ''}`}>
                     <ul>
-                        <Link to="/"><li>მთავარი</li></Link>
-                        <Link><li>კურსები</li></Link>
-                        <Link><li>მზა კოდები</li></Link>
-                        <Link to="./admin"> <li>Admin Hero</li> </Link>
+                        <Link to="/" onClick={handleLinkClick}><li>მთავარი</li></Link>
+                        <Link to="/" onClick={handleLinkClick}><li >კურსები</li></Link>
+                        <Link to="/" onClick={handleLinkClick}><li>მზა კოდები</li></Link>
+                        <Link to="./admin" onClick={handleLinkClick}> <li>Admin Hero</li> </Link>
                         
+                        <Link><li className='menu__contact' >დაგვიკავშირდით</li> </Link>
                         
-                        <li className='menu__contact' >დაგვიკავშირდით</li>
                     </ul>
                 </div>
 

@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "anra-academy": "file:..",
     "cloudinary": "^1.41.3",
     "cors": "^2.8.5",
     "dotenv": "^17.2.2",

@@ -11,6 +11,9 @@ import adminRoutes from "./routes/admin.js";
 
 dotenv.config();
 const app = express();
+app.use(cors({
+  origin: "*" // ან შენი frontend URL
+}));
 const PORT = process.env.PORT || 5000;
 
 // __dirname fix

@@ -6,7 +6,7 @@ export default function AdminLogin({ onSuccess }) {
 
   const handleLogin = async () => {
     try {
-      await axios.post("http://localhost:5000/api/admin/check", { password });
+      await axios.post("https://anra-academy-ii.onrender.com/api/admin/check", { password });
       onSuccess();
     } catch (err) {
       alert("Wrong password");

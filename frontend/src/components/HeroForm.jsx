@@ -13,7 +13,7 @@ const HeroForm = () => {
     const formData = new FormData();
     formData.append("image", file);
 
-    const res = await axios.post("http://localhost:5000/api/upload", formData, {
+    const res = await axios.post("https://anra-academy-ii.onrender.com/api/upload", formData, {
       headers: { "Content-Type": "multipart/form-data" },
     });
     setImage(res.data.url);

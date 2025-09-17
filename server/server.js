@@ -23,10 +23,14 @@ app.use(express.json());
 // DB connect
 connectDB();
 
+console.log("hello")
 // Routes
 app.use("/api/upload", uploadRoutes);
 app.use("/api/hero", heroRoutes);
-app.use("/api/admin", adminRoutes);
+app.use("/api/admin", adminRoutes);~
+
+console.log("MONGO_URI:", process.env.MONGO_URI);
+console.log("PORT:", process.env.PORT);
 
 // Serve frontend build
 app.use(express.static(path.join(__dirname, "../frontend/dist")));

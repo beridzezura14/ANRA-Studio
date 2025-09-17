@@ -31,7 +31,7 @@ function Header() {
                     <div className={`line line-3 ${active ? 'active' : ''}`}></div>
                 </div>
 
-                <button className='pc z-[9999]  bg-gradient-to-r from-[#643434] to-[#2B384C] hover:opacity-90 transition-all duration-300'>დაგვიკავშირდით</button>
+                <button className='pc z-[9999] hover:opacity-90 transition-all duration-300'>დაგვიკავშირდით</button>
             </div>
         </div>
     )

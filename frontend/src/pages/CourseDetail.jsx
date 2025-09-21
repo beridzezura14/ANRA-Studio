@@ -11,7 +11,7 @@ const CourseDetail = () => {
   useEffect(() => {
     const fetchCourse = async () => {
       try {
-        const { data } = await axios.get(`https://anra-academy-ii.onrender.com/api/courses/${id}`);
+        const { data } = await axios.get(`https://anrastudio.onrender.com/api/courses/${id}`);
         setCourse(data);
         if (data.topics.length > 0) {
           setSelectedTopic(data.topics[0]);

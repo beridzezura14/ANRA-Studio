@@ -7,7 +7,7 @@ export default function AdminLogin({ onSuccess }) {
 
   const handleLogin = async () => {
     try {
-      await axios.post("https://anra-academy-ii.onrender.com/api/admin/check", { password });
+      await axios.post("https://anrastudio.onrender.com//api/admin/check", { password });
       localStorage.setItem("adminPassword", password); // 🔑 ვინახავთ
       toast.success("Welcome Admin!");
       onSuccess();

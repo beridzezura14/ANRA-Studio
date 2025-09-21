@@ -31,10 +31,3 @@
 - **Deployment:** Render
 
 ---
-
-## ⚙️ ინსტალაცია (დეველოპერული გარემო)
-
-1. პროექტის დაკლონვა:
-   ```bash
-   git clone <repository-url>
-   cd <project-folder>

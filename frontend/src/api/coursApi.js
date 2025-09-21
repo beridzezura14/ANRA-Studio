@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API = axios.create({ baseURL: "https://anrastudio.onrender.com//api" }); // backend URL
+const API = axios.create({ baseURL: "https://anrastudio.onrender.com/api" }); // backend URL
 
 // Courses
 export const getCourses = () => API.get("/courses");
@@ -8,7 +8,7 @@ export const getCourseById = (id) => API.get(`/courses/${id}`);
 
 
 
-const API_URL = "https://anrastudio.onrender.com//api/courses"; // ან render-ის url
+const API_URL = "https://anrastudio.onrender.com/api/courses"; // ან render-ის url
 
 // კურსის წაშლა
 export const deleteCourse = (courseId, password) => {

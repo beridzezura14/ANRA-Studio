@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import Home from "./pages/Home";
 import Admin from "./pages/Admin";
+import CoursePage from "./pages/CoursePage";
 import Header from "./components/Header";
 import CourseDetail from "./pages/CourseDetail";
 
@@ -16,6 +17,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/coursepage" element={<CoursePage />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="/courses/:id" element={<CourseDetail />} />
       </Routes>

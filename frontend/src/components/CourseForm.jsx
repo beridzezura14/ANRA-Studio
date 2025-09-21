@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { toast } from "react-hot-toast"; 
 import CourseDeleteForm from "./CourseDeleteForm";
 
 const CourseForm = () => {
@@ -16,6 +17,7 @@ const CourseForm = () => {
         setCourses(data);
       } catch (err) {
         console.error("Error loading courses:", err);
+        toast.error("კურსების ჩატვირთვა ვერ მოხერხდა");
       }
     };
     fetchCourses();
@@ -33,9 +35,10 @@ const CourseForm = () => {
         headers: { "Content-Type": "multipart/form-data" },
       });
       setImage(data.url);
+      toast.success("სურათი წარმატებით აიტვირთა");
     } catch (err) {
       console.error("Upload error:", err.response?.data || err.message);
-      alert("სურათის ატვირთვა ვერ მოხერხდა!");
+      toast.error("სურათის ატვირთვა ვერ მოხერხდა!");
     }
   };
 
@@ -57,7 +60,7 @@ const CourseForm = () => {
     );
 
     if (validTopics.length === 0) {
-      alert("მინიმუმ ერთი თემა მაინც უნდა დაამატო!");
+      toast.error("მინიმუმ ერთი თემა მაინც უნდა დაამატო!");
       return;
     }
 
@@ -72,14 +75,14 @@ const CourseForm = () => {
         );
 
         console.log("Updated course:", data);
-        alert("თემა წარმატებით დაემატა კურსს!");
+        toast.success("თემა წარმატებით დაემატა კურსს!");
       } else {
         if (!title.trim()) {
-          alert("გთხოვ, ჩაწერო კურსის სათაური!");
+          toast.error("გთხოვ, ჩაწერო კურსის სათაური!");
           return;
         }
         if (!image) {
-          alert("გთხოვ, ატვირთო სურათი!");
+          toast.error("გთხოვ, ატვირთო სურათი!");
           return;
         }
 
@@ -91,7 +94,7 @@ const CourseForm = () => {
         });
 
         console.log("Saved:", data);
-        alert("კურსი წარმატებით დაემატა!");
+        toast.success("კურსი წარმატებით დაემატა!");
       }
 
       setTitle("");
@@ -100,7 +103,7 @@ const CourseForm = () => {
       setSelectedCourse("");
     } catch (err) {
       console.error("Save error:", err.response?.data || err.message);
-      alert("შენახვისას მოხდა შეცდომა!");
+      toast.error("შენახვისას მოხდა შეცდომა!");
     }
   };
 
@@ -111,7 +114,7 @@ const CourseForm = () => {
         onSubmit={handleSubmit}
         className="max-w-[90%] mx-auto mt-20 bg-white shadow-lg rounded-lg p-8 flex flex-col gap-6"
       >
-        <h2 className="text-2xl font-bold text-center text-gray-800 mb-4">კურსის ფორმა</h2>
+        <h2 className="text-2xl font-bold text-gray-800 mb-4">კურსის ფორმა</h2>
 
         <label className="block">
           <span className="font-semibold">აირჩიე კურსი (თუ გინდა ახალი თემის დამატება)</span>
@@ -175,20 +178,21 @@ const CourseForm = () => {
             />
           </div>
         ))}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
+          {!selectedCourse && (
+            <button
+              type="button"
+              onClick={addTopic}
+              className="px-4 py-2 bg-[#222831] text-white rounded"
+            >
+              თემა დამატება
+            </button>
+          )}
 
-        {!selectedCourse && (
-          <button
-            type="button"
-            onClick={addTopic}
-            className="px-4 py-2 bg-blue-500 text-white rounded"
-          >
-            თემა დამატება
+          <button type="submit" className="px-4 py-2 bg-green-500 text-white rounded">
+            {selectedCourse ? "თემის დამატება კურსს" : "ახალი კურსის შექმნა"}
           </button>
-        )}
-
-        <button type="submit" className="px-4 py-2 bg-green-500 text-white rounded">
-          {selectedCourse ? "თემის დამატება კურსს" : "ახალი კურსის შექმნა"}
-        </button>
+        </div>
       </form>
 
       {/* კურსების/თემების წაშლა */}

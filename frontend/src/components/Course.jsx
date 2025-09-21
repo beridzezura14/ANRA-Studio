@@ -14,7 +14,7 @@ const Course = () => {
   }, []);
 
   return (
-    <div className="p-6 grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-5 gap-6">
+    <div className="p-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-6">
       {courses.map((course) => (
         <Link
           key={course._id}
@@ -24,7 +24,7 @@ const Course = () => {
           <img
             src={course.image}
             alt={course.title}
-            className="w-full h-48 object-cover rounded-t-lg"
+            className="w-full h-48 object-cover rounded"
           />
           <h2 className="text-xl font-bold p-2 text-[#DFD0B8]">{course.title}</h2>
         </Link>

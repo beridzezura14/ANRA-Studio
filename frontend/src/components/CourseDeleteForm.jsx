@@ -9,7 +9,7 @@ const CourseDeleteForm = () => {
   const [error, setError] = useState(null);
   const [editMode, setEditMode] = useState({ courseId: null, topicId: null });
   const [formData, setFormData] = useState({ title: "", videoUrl: "", description: "" });
-  const [openCourseId, setOpenCourseId] = useState(null); // 👈 რომელი კურსია გახსნილი
+  const [openCourseId, setOpenCourseId] = useState(null);
 
   // ყველა კურსის წამოღება
   useEffect(() => {
@@ -65,12 +65,10 @@ const CourseDeleteForm = () => {
 
     try {
       if (editMode.topicId) {
-        // თემის განახლება
         const { data } = await updateTopic(editMode.courseId, editMode.topicId, formData, password);
         setCourses(courses.map((c) => (c._id === editMode.courseId ? data : c)));
         toast.success("თემა განახლდა!");
       } else {
-        // კურსის განახლება
         const { data } = await updateCourse(editMode.courseId, { title: formData.title }, password);
         setCourses(courses.map((c) => (c._id === editMode.courseId ? data : c)));
         toast.success("კურსი განახლდა!");
@@ -85,23 +83,25 @@ const CourseDeleteForm = () => {
   if (error) return <h2 className="text-red-500 text-center my-10">{error}</h2>;
 
   return (
-    <div className="max-w-[90%] mx-auto bg-white shadow-lg rounded-lg p-8 flex flex-col gap-6">
-      <h2 className="text-2xl font-bold mb-4 text-left text-gray-800">კურსების მართვა</h2>
+    <div className="max-w-full mx-autorounded-lg flex flex-col gap-6">
+      <h2 className="text-xl sm:text-2xl font-bold mb-4 text-left text-gray-800">
+        კურსების მართვა
+      </h2>
 
       {courses.map((course) => (
-        <div key={course._id} className="border rounded-md p-4">
+        <div key={course._id} className="border rounded-md p-3 sm:p-4">
           {/* Header */}
-          <div className="flex justify-between items-center">
+          <div className="flex flex-col sm:flex-row justify-between gap-2 sm:gap-4 items-start sm:items-center">
             {editMode.courseId === course._id && !editMode.topicId ? (
               <input
                 value={formData.title}
                 onChange={(e) => setFormData({ ...formData, title: e.target.value })}
-                className="border p-1 rounded"
+                className="border p-1 rounded w-full sm:w-auto"
               />
             ) : (
-              <h3 className="text-xl font-semibold">{course.title}</h3>
+              <h3 className="text-lg sm:text-xl font-semibold">{course.title}</h3>
             )}
-            <div className="space-x-2">
+            <div className="flex flex-wrap gap-2">
               {editMode.courseId === course._id && !editMode.topicId ? (
                 <button onClick={handleSave} className="bg-green-500 text-white px-3 py-1 rounded">
                   Save
@@ -109,7 +109,7 @@ const CourseDeleteForm = () => {
               ) : (
                 <button
                   onClick={() => handleEdit(course._id)}
-                  className="bg-blue-500 text-white px-3 py-1 rounded"
+                  className="bg-[#222831] text-white px-3 py-1 rounded"
                 >
                   Edit
                 </button>
@@ -135,9 +135,12 @@ const CourseDeleteForm = () => {
           {openCourseId === course._id && (
             <ul className="mt-3 space-y-2">
               {course.topics.map((topic) => (
-                <li key={topic._id} className="flex justify-between items-start border-b pb-2">
+                <li
+                  key={topic._id}
+                  className="flex flex-col sm:flex-row justify-between items-start sm:items-center border-b pb-2 gap-2"
+                >
                   {editMode.courseId === course._id && editMode.topicId === topic._id ? (
-                    <div className="flex-1 space-y-1">
+                    <div className="flex-1 space-y-2 w-full">
                       <input
                         value={formData.title}
                         onChange={(e) => setFormData({ ...formData, title: e.target.value })}
@@ -165,11 +168,11 @@ const CourseDeleteForm = () => {
                     </div>
                   ) : (
                     <>
-                      <span>{topic.title}</span>
-                      <div className="space-x-2">
+                      <span className="text-base sm:text-lg">{topic.title}</span>
+                      <div className="flex flex-wrap gap-2">
                         <button
                           onClick={() => handleEdit(course._id, topic)}
-                          className="bg-blue-400 text-white px-2 py-1 rounded"
+                          className="bg-[#222831] text-white px-2 py-1 rounded"
                         >
                           Edit
                         </button>

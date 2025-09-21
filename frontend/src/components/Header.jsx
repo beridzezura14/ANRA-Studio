@@ -25,7 +25,7 @@ function Header() {
                         <Link to="/" onClick={handleLinkClick}><li>მთავარი</li></Link>
                         <Link to="/coursepage" onClick={handleLinkClick}><li >კურსები</li></Link>
                         <Link to="/" onClick={handleLinkClick}><li>მზა კოდები</li></Link>
-                        {/* <Link to="./admin" onClick={handleLinkClick}> <li>Admin Hero</li> </Link> */}
+                        <Link to="./admin" onClick={handleLinkClick}> <li>Admin Hero</li> </Link>
                         
                         <Link><li className='menu__contact' >დაგვიკავშირდით</li> </Link>
                         

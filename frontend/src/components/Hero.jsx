@@ -40,8 +40,8 @@ const Hero = () => {
       .catch(() => setError("ვერ მოხერხდა მონაცემების ჩატვირთვა."));
   }, []);
 
-  if (error) return <h2 className="h-32 text-red-500 text-center my-10">{error}</h2>;
-  if (!hero) return <h2 className="h-32 text-center my-10"></h2>;
+  if (error) return <h2 className="py-24 xl:py-32 h-[40dvh] text-red-500 text-center">{error}</h2>;
+  if (!hero) return <h2 className="py-24 xl:py-32 h-[40dvh] text-center"></h2>;
 
   const heroWords = hero.title.split(" ");
 
@@ -61,7 +61,7 @@ const Hero = () => {
             }}
         />  
       </div>
-      <div className="max-w-[90%] mx-auto py-24 xl:py-32  text-center relative">
+      <div className="max-w-[90%] mx-auto py-24 xl:py-32 h-[40dvh] text-center relative">
         <div className="flex-1">
           <div ref={containerRef} className="inline-block overflow-hidden">
             {heroWords.map((word, index) => (

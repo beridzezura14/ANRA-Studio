@@ -12,7 +12,7 @@ const CourseForm = () => {
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-        const { data } = await axios.get("http://localhost:5000/api/courses");
+        const { data } = await axios.get("https://anra-academy-ii.onrender.com/api/courses");
         setCourses(data);
       } catch (err) {
         console.error("Error loading courses:", err);
@@ -29,7 +29,7 @@ const CourseForm = () => {
     formData.append("image", file);
 
     try {
-      const { data } = await axios.post("http://localhost:5000/api/upload", formData, {
+      const { data } = await axios.post("https://anra-academy-ii.onrender.com/api/upload", formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
       setImage(data.url);
@@ -64,7 +64,7 @@ const CourseForm = () => {
     try {
       if (selectedCourse) {
         const { data } = await axios.post(
-          `http://localhost:5000/api/courses/${selectedCourse}/topics`,
+          `https://anra-academy-ii.onrender.com/api/courses/${selectedCourse}/topics`,
           {
             ...validTopics[0],
             password: "123",
@@ -83,7 +83,7 @@ const CourseForm = () => {
           return;
         }
 
-        const { data } = await axios.post("http://localhost:5000/api/courses", {
+        const { data } = await axios.post("https://anra-academy-ii.onrender.com/api/courses", {
           title,
           image,
           topics: validTopics,

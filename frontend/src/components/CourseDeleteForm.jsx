@@ -14,7 +14,7 @@ const CourseDeleteForm = () => {
   // ყველა კურსის წამოღება
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/courses")
+      .get("https://anra-academy-ii.onrender.com/api/courses")
       .then((res) => setCourses(res.data))
       .catch(() => setError("ვერ მოხერხდა კურსების ჩატვირთვა."))
       .finally(() => setLoading(false));

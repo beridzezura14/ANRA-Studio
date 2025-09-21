@@ -25,7 +25,7 @@ const CourseDetail = () => {
   if (!course) return <p>Loading...</p>;
 
   return (
-    <div className="pt-24 p-4 md:p-6 text-[#DFD0B8] min-h-screen bg-[#222831]">
+    <div className="pt-24 p-4 md:py-32 text-[#DFD0B8] min-h-screen bg-[#222831]">
       <div className="flex flex-col-reverse md:flex-row gap-6">
         <div className="md:w-3/4 mb-8 md:mb-0">
           {selectedTopic ? (

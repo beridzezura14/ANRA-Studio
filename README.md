@@ -30,4 +30,39 @@
 - **Database:** MongoDB
 - **Deployment:** Render
 
+---------------------------------------------------------------------------------------------------------------------------
+
+# 🎓 Video Courses Platform
+
+This is a web application for browsing and watching video courses.  
+The app includes an **Admin Panel** where courses and topics can be created, edited, and deleted.  
+The admin panel is protected by a password.
+
+---
+
+## 🚀 Features
+
+### 👨‍🎓 User Side
+- Browse list of available courses
+- View details of a specific course
+- See list of topics (📱 collapsible on mobile)
+- Watch embedded videos for each topic
+- Read topic descriptions
+
+### 🔑 Admin Panel
+- **Create new course** (title, image, topics)
+- **Edit existing courses**
+- **Delete courses**
+- **Add or remove topics** for a course
+- Upload course images
+- Protected by **password** (`123`)
+
+---
+
+## 🛠️ Tech Stack
+- **Frontend:** React + TailwindCSS  
+- **Backend:** Node.js + Express  
+- **Database:** MongoDB  
+- **Deployment:** Render  
+
 ---

@@ -20,7 +20,7 @@
 - **კურსის წაშლა**
 - **თემის დამატება/წაშლა კონკრეტულ კურსში**
 - სურათების ატვირთვა
-- დაცულია **პაროლით** (`123`)
+- დაცულია **პაროლით**
 
 ---
 
@@ -55,7 +55,7 @@ The admin panel is protected by a password.
 - **Delete courses**
 - **Add or remove topics** for a course
 - Upload course images
-- Protected by **password** (`123`)
+- Protected by **password**
 
 ---
 

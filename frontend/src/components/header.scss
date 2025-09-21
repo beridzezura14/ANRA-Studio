@@ -3,7 +3,7 @@
 .main-header {
   position: fixed;
   width: 100%;
-  // background-color: white !important;
+  background-color: #222831;
   padding: 1.5rem 0;
   z-index: 111;
   .header {
@@ -25,12 +25,12 @@
     .navbar {
       position: absolute;
       height: 50dvh;
-      background: linear-gradient(40deg, #2b384c 0%, #2b384c 40%, #643434 100%);
+      background: linear-gradient(40deg, #222831 0%, #393E46 100%);
       width: 90%;
       top: 50dvh;
       border-top-left-radius: 20px;
       border-top-right-radius: 20px;
-      box-shadow: #2b384c 0px 0px 70px 4px;
+      box-shadow: black 0px 0px 70px 4px;
       transform: translateY(120%);
       transition: 0.3s;
       &.active {
@@ -119,14 +119,13 @@
         }
 
         ul {
-          border: 1px solid #2b384c;
           padding: 0px;
           position: static;
           height: auto;
           display: flex;
           justify-content: center;
           gap: 1.2rem;
-          margin-top: -21px;
+          margin-top: -18px;
           border-radius: 22px;
           padding: 7px 0px;
 

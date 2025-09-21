@@ -1,7 +1,9 @@
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import Home from "./pages/Home";
 import Admin from "./pages/Admin";
 import Header from "./components/Header";
+import CourseDetail from "./pages/CourseDetail";
+
 
 function App() {
   return (
@@ -15,6 +17,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/admin" element={<Admin />} />
+        <Route path="/courses/:id" element={<CourseDetail />} />
       </Routes>
     </Router>
   );

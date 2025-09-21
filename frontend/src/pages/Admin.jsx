@@ -1,6 +1,7 @@
 import { useState } from "react";
 import AdminLogin from "../components/AdminLogin";
 import HeroForm from "../components/HeroForm";
+import CourseForm from "../components/CourseForm";
 
 export default function Admin() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -10,7 +11,10 @@ export default function Admin() {
       {!isLoggedIn ? (
         <AdminLogin onSuccess={() => setIsLoggedIn(true)} />
       ) : (
-        <HeroForm />
+        <>
+          <HeroForm />
+          <CourseForm />
+        </>
       )}
     </div>
   );

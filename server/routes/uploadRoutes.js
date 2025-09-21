@@ -17,7 +17,12 @@ const upload = multer({ storage });
 
 router.post("/", upload.single("image"), (req, res) => {
   if (!req.file) return res.status(400).json({ message: "No file uploaded" });
-  res.json({ url: req.file.path }); // თუ req.file.path undefined არის, გამოიყენე req.file?.path ან req.file?.filename
+
+  console.log("Uploaded file:", req.file); // ✅ აქ ნახავ Cloudinary response-ს
+
+  res.json({
+    url: req.file.path || req.file.filename, // ორივე შეამოწმე
+  });
 });
 
 export default router;

@@ -14,9 +14,11 @@ function Header() {
     return (
         <div className='main-header'>
             <div className="header">
-                <div className="logo text-transparent bg-clip-text">
-                    ANRA Studio
-                </div>
+                <Link to="/" onClick={handleLinkClick}>
+                    <div className="logo text-transparent bg-clip-text">
+                        ANRA Studio
+                    </div>
+                </Link>
 
                 <div className={`navbar ${active ? 'active' : ''}`}>
                     <ul>

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import { toast } from "react-hot-toast";
 
 export default function AdminLogin({ onSuccess }) {
   const [password, setPassword] = useState("");
@@ -11,7 +12,7 @@ export default function AdminLogin({ onSuccess }) {
       await axios.post("https://anra-academy-ii.onrender.com/api/admin/check", { password });
       onSuccess();
     } catch (err) {
-      alert("Wrong password");
+      toast.error("Wrong password"); 
       console.log(err)
     }
   };

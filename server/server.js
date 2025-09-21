@@ -8,6 +8,7 @@ import connectDB from "./config/db.js";
 import heroRoutes from "./routes/heroRoutes.js";
 import uploadRoutes from "./routes/uploadRoutes.js";
 import adminRoutes from "./routes/admin.js";
+import courseRoutes from "./routes/courseRoutes.js";
 
 dotenv.config();
 const app = express();
@@ -30,10 +31,9 @@ console.log("hello")
 // Routes
 app.use("/api/upload", uploadRoutes);
 app.use("/api/hero", heroRoutes);
-app.use("/api/admin", adminRoutes);~
+app.use("/api/admin", adminRoutes);
+app.use("/api/courses", courseRoutes);
 
-console.log("MONGO_URI:", process.env.MONGO_URI);
-console.log("PORT:", process.env.PORT);
 
 // Serve frontend build
 app.use(express.static(path.join(__dirname, "../frontend/dist")));

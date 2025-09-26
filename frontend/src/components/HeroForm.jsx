@@ -49,7 +49,7 @@ const HeroForm = () => {
   if (error) return <h2 className="text-red-500 text-center my-10">{error}</h2>;
 
   return (
-    <form onSubmit={handleSubmit} className="max-w-[90%] mx-auto bg-white shadow-lg rounded-lg p-8 flex flex-col gap-6">
+    <form onSubmit={handleSubmit} className="max-w-[90%] mx-auto lg:w-[1000px] bg-white shadow-lg rounded-lg p-8 flex flex-col gap-6">
       <h2 className="text-2xl font-bold mb-4 text-left text-gray-800">Hero სექცია</h2>
 
       <input

@@ -112,7 +112,7 @@ const CourseForm = () => {
       {/* კურსის დამატების ფორმა */}
       <form
         onSubmit={handleSubmit}
-        className="max-w-[90%] mx-auto mt-20 bg-white shadow-lg rounded-lg p-8 flex flex-col gap-6"
+        className="max-w-[90%] mx-auto lg:w-[1000px] mt-10 bg-white shadow-lg rounded-lg p-8 flex flex-col gap-6"
       >
         <h2 className="text-2xl font-bold text-gray-800 mb-4">კურსის ფორმა</h2>
 
@@ -196,7 +196,7 @@ const CourseForm = () => {
       </form>
 
       {/* კურსების/თემების წაშლა */}
-      <div className="max-w-[90%] mx-auto bg-white shadow-lg rounded-lg p-8 mt-10">
+      <div className="max-w-[90%] mx-auto lg:w-[1000px] bg-white shadow-lg rounded-lg p-8 mt-10">
         <CourseDeleteForm />
       </div>
     </div>

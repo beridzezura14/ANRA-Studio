@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
 const CourseDetail = () => {
@@ -26,7 +27,12 @@ const CourseDetail = () => {
   if (!course) return <p>Loading...</p>;
 
   return (
-    <div className="max-w-[90%] m-auto py-24 md:py-32 text-[#DFD0B8] min-h-screen bg-[#222831]">
+    <div className="max-w-[90%] m-auto py-24 md:py-24 text-[#DFD0B8] min-h-screen bg-[#222831]">
+
+      <div className="mb-4">
+        <Link to="/" className="font-pantonmtav3"> მთავარი </Link> 
+        / {course.title}
+      </div>
       <div className="flex flex-col-reverse md:flex-row gap-6">
         {/* Video + description */}
         <div className="md:w-3/4 mb-8 md:mb-0">

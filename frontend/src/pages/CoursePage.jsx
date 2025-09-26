@@ -1,9 +1,11 @@
 import Course from "../components/Course"
+import Contact from "../components/Contact"
 
 export default function CoursePage() {
   return (
-    <div className="py-16">
+    <div className="pt-16">
         <Course />
-    </div>
+        <Contact />
+    </div>  
   )
 }

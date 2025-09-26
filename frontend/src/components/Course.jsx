@@ -30,7 +30,7 @@ const Course = () => {
               alt={course.title}
               className="w-full h-48 object-cover"
             />
-            <p className="text-sm bg-black px-[5px] py-1 font-pantonmtav3 text-gray-400">
+            <p className="text-sm bg-black px-2 pt-1 font-pantonmtav3 text-gray-400">
               {course.topics?.length || 0} ვიდეო
             </p>
             <h2 className="text-xl font-bold p-2 text-[#DFD0B8]">{course.title}</h2>

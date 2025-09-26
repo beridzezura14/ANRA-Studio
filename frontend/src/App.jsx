@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import Home from "./pages/Home";
 import Admin from "./pages/Admin";
 import CoursePage from "./pages/CoursePage";
@@ -20,26 +20,36 @@ const Loader = () => {
   );
 };
 
+// Scroll-to-top component
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+};
+
 function App() {
   const [loading, setLoading] = useState(true);
   const [fadeOut, setFadeOut] = useState(false);
 
   useEffect(() => {
-    // 2 წამით ვაჩერებთ ლოდერს
     const timer = setTimeout(() => {
       setFadeOut(true);
-      // fade-out ანიმაციის შემდეგ სრულად მოვხსნით
-      setTimeout(() => setLoading(false), 700); // duration უნდა ემთხვეოდეს CSS transition
-    }, 2000);
+      setTimeout(() => setLoading(false), 700); // duration ემთხვევა CSS transition
+    }, 1000);
 
     return () => clearTimeout(timer);
   }, []);
 
   return (
     <>
-      {loading && <Loader onFadeOut={fadeOut} />}
+      {loading && <Loader />}
       {!loading && (
         <Router>
+          <ScrollToTop /> {/* scroll ყოველთვის ზედიდან იწყებს */}
           <Header />
           <Routes>
             <Route path="/" element={<Home />} />

@@ -24,10 +24,10 @@ function Header() {
                     <ul>
                         <Link to="/" onClick={handleLinkClick}><li>მთავარი</li></Link>
                         <Link to="/coursepage" onClick={handleLinkClick}><li >კურსები</li></Link>
-                        <Link to="/" onClick={handleLinkClick}><li>მზა კოდები</li></Link>
-                        {/* <Link to="./admin" onClick={handleLinkClick}> <li>Admin</li> </Link> */}
+                        {/* <Link to="/" onClick={handleLinkClick}><li>მზა კოდები</li></Link> */}
+                        <Link to="./admin" onClick={handleLinkClick}> <li>Admin</li> </Link>
                         
-                        <Link><li className='menu__contact' >დაგვიკავშირდით</li> </Link>
+                        {/* <Link><li className='menu__contact' >დაგვიკავშირდით</li> </Link> */}
                         
                     </ul>
                 </div>
@@ -38,7 +38,7 @@ function Header() {
                     <div className={`line line-3 ${active ? 'active' : ''}`}></div>
                 </div>
 
-                <button className='pc z-[9999] hover:opacity-90 transition-all duration-300'>დაგვიკავშირდით</button>
+                {/* <button className='pc z-[9999] hover:opacity-90 transition-all duration-300'>დაგვიკავშირდით</button> */}
             </div>
         </div>
     )

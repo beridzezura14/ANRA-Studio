@@ -7,7 +7,7 @@ import Header from "./components/Header";
 import CourseDetail from "./pages/CourseDetail";
 
 // ლამაზი Loader
-const Loader = ({ onFadeOut }) => {
+const Loader = () => {
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-[#222831] z-50 transition-opacity duration-700" id="loader">
       <div className="relative w-32 h-32">
